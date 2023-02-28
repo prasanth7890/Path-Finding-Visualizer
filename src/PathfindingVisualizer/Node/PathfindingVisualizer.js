@@ -1,122 +1,5 @@
-// import React, {Component} from "react";
-// import Node from "./Node/Node";
-// import { dijkstra } from "../../Algorithms/dijkstra";
-
-// //CSS
-// import './PathfindingVisualizer.css'
-
-// const START_NODE_ROW = 10;
-// const START_NODE_COL = 15;
-// const FINISH_NODE_ROW = 10;
-// const FINISH_NODE_COL = 35;
-
-
-// export default class PathfindingVisualizer extends Component {
-//     constructor(props) {
-//         super(props);
-//         this.state={
-//             grid: [],
-//         };
-//     }
-
-//     componentDidMount() {
-//         const grid = getInitialGrid();
-//         this.setState({grid});
-//     }
-
-
-//     animateDijkstra(visitedNodesInOrder) {
-//         for (let i = 0; i < visitedNodesInOrder.length; i++) {
-//             console.log('outer i : '+ i)
-//             setTimeout(() => {
-//                 const node = visitedNodesInOrder[i];
-//                 const newGrid = this.state.grid.slice();
-//                 const newNode = {
-//                     ...node,
-//                     isVisited: true,
-//                 };
-//                 newGrid[node.row][node.col] = newNode;
-//                 console.log('Inner i : '+ i);
-//                 this.setState({grid: newGrid});
-//             }, 1000 * i);
-                
-//         }
-//     }
-    
-
-//     visualizerDijkstra() {
-//         const {grid} = this.state;
-//         const startNode = grid[START_NODE_ROW][START_NODE_COL];
-//         const finishNode = grid[FINISH_NODE_ROW][FINISH_NODE_COL];
-//         const visitedNodesInOrder = dijkstra(grid, startNode, finishNode);
-//         this.animateDijkstra(visitedNodesInOrder);
-//     }
-
-        
-//     render() {
-//         const {grid} = this.state;
-//         return (
-//             <>
-//             <button onClick={()=>this.visualizerDijkstra()}>Visualize Dijkstra's Algorithm</button>
-
-//              <div className="grid">
-//                 {
-//                     grid.map((row, rowIdx)=>{
-//                         return (
-//                         <div key={rowIdx}>
-//                             {row.map((node, nodeIdx)=> {
-//                                 const {row, col, isStart, isFinish, isVisited}=node;
-//                                 return (
-//                                     <Node
-//                                         col={col}
-//                                         row={row}
-//                                         key={nodeIdx}
-//                                         isStart={isStart}
-//                                         isFinish={isFinish}
-//                                         isVisited={isVisited}
-//                                     ></Node>
-//                                 )
-//                             })}
-//                         </div>
-//                         )
-//                     })
-//                 }
-//              </div>
-//             </>
-//         );
-//     }
-// }
-
-
-// const getInitialGrid=()=>{
-//     const grid = [];
-//     for (let row = 0; row < 20; row++) {
-//         const currRow = [];
-//         for (let col = 0; col < 50; col++) {
-//             currRow.push(createNode(col, row));
-//         }
-//         grid.push(currRow);
-//     }
-//     return grid;
-// };
-
-// const createNode = (col, row) => {
-//     return {
-//         col,
-//         row, 
-//         isStart: row === START_NODE_ROW &&  col === START_NODE_COL,
-//         isFinish: row === FINISH_NODE_ROW && col === FINISH_NODE_COL,
-//         distance: Infinity,
-//         isVisited: false,
-//         isWall: false,
-//         previousNode: null
-//     };
-// };
-
-
 import React, {Component} from 'react';
 import Node from './Node/Node';
-// import {dijkstra, getNodesInShortestPathOrder} from '../algorithms/dijkstra';
 import { dijkstra, getNodesInShortestPathOrder } from '../../Algorithms/dijkstra';
 import { astar } from '../../Algorithms/astar';
 import bfs from '../../Algorithms/bfs';
@@ -164,14 +47,14 @@ export default class PathfindingVisualizer extends Component {
       if (i === visitedNodesInOrder.length) {
         setTimeout(() => {
           this.animateShortestPath(nodesInShortestPathOrder);
-        }, 10 * i);
+        }, 20 * i);
         return;
       }
       setTimeout(() => {
         const node = visitedNodesInOrder[i];
         document.getElementById(`node-${node.row}-${node.col}`).className =
           'node node-visited';
-      }, 10 * i);
+      }, 20 * i);
     }
   }
 
@@ -241,19 +124,19 @@ export default class PathfindingVisualizer extends Component {
     const {grid, mouseIsPressed} = this.state;
     return (
       <>
-        <button onClick={() => this.visualizeDijkstra()}>
-          Visualize Dijkstra's Algorithm
+        <button class="button-89" onClick={() => this.visualizeDijkstra()}>
+          Dijkstra's Algorithm
         </button>
-        <button onClick={() => this.visualizeAstar()}>
-          Visualize AStar Algorithm
+        <button class="button-89" onClick={() => this.visualizeAstar()}>
+          AStar Algorithm
         </button>
-        <button onClick={() => this.visualizeBFS()}>
-          Visualize BFS Algorithm
+        <button class="button-89" onClick={() => this.visualizeBFS()}>
+          BFS Algorithm
         </button>
-        <button onClick={() => this.visualizeDFS()}>
-          Visualize DFS Algorithm
+        <button class="button-89" onClick={() => this.visualizeDFS()}>
+          DFS Algorithm
         </button>
-        <button onClick={() => this.getMaze()}>
+        <button class="button-89" onClick={() => this.getMaze()}>
           Maze
         </button>
         <div className="grid">
