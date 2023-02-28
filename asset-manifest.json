@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/github.io/Path-Finding-Visualizer/static/css/main.9bb8193c.css",
-    "main.js": "/github.io/Path-Finding-Visualizer/static/js/main.9201759c.js",
-    "static/js/787.6fa814cd.chunk.js": "/github.io/Path-Finding-Visualizer/static/js/787.6fa814cd.chunk.js",
-    "index.html": "/github.io/Path-Finding-Visualizer/index.html",
-    "main.9bb8193c.css.map": "/github.io/Path-Finding-Visualizer/static/css/main.9bb8193c.css.map",
-    "main.9201759c.js.map": "/github.io/Path-Finding-Visualizer/static/js/main.9201759c.js.map",
-    "787.6fa814cd.chunk.js.map": "/github.io/Path-Finding-Visualizer/static/js/787.6fa814cd.chunk.js.map"
+    "main.css": "/Path-Finding-Visualizer/static/css/main.9bb8193c.css",
+    "main.js": "/Path-Finding-Visualizer/static/js/main.79d7a62b.js",
+    "static/js/787.6fa814cd.chunk.js": "/Path-Finding-Visualizer/static/js/787.6fa814cd.chunk.js",
+    "index.html": "/Path-Finding-Visualizer/index.html",
+    "main.9bb8193c.css.map": "/Path-Finding-Visualizer/static/css/main.9bb8193c.css.map",
+    "main.79d7a62b.js.map": "/Path-Finding-Visualizer/static/js/main.79d7a62b.js.map",
+    "787.6fa814cd.chunk.js.map": "/Path-Finding-Visualizer/static/js/787.6fa814cd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9bb8193c.css",
-    "static/js/main.9201759c.js"
+    "static/js/main.79d7a62b.js"
   ]
 }
